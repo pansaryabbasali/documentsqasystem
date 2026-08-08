@@ -1,0 +1,57 @@
+ATLAS FLUID SYSTEMS B.V.
+ENGINEERING CHANGE NOTICE
+
+ECN No:            ECN-2031
+Date issued:        14 May 2026
+Status:             Approved
+Product line affected: AF-4520 (AF-4500 series)
+
+TITLE
+Impeller material change — cast iron to duplex stainless steel
+
+DESCRIPTION OF CHANGE
+The AF-4520 impeller material is changed from cast iron (ASTM A48 Class 30) to
+duplex stainless steel (ASTM A890 Grade 4A). No change is made to impeller
+geometry, hydraulic profile, or mounting dimensions.
+
+REASON FOR CHANGE
+Field service records from Q4 2025 through Q1 2026 show a pattern of premature
+impeller erosion on AF-4520 units installed in high-chloride water treatment
+applications, with several units requiring impeller replacement inside 18 months
+against a 5-year design life target. Root cause analysis attributes the wear to
+chloride-accelerated erosion-corrosion of the cast iron impeller in these
+service conditions. Duplex stainless steel offers substantially higher resistance
+to chloride-induced erosion-corrosion at a moderate cost increase.
+
+AFFECTED PART NUMBERS
+  Previous: IMP-4520-CI  (cast iron impeller, AF-4520)
+  New:      IMP-4520-DSS (duplex stainless steel impeller, AF-4520)
+
+EFFECTIVITY
+Applies to all AF-4520 units with serial numbers AF4520-2026-0500 and later.
+Units below this serial number range are not affected by this change and
+continue to use IMP-4520-CI for spares unless a customer requests an upgrade.
+
+IMPACT ASSESSMENT
+  - Mounting dimensions: No change. Fully interchangeable with prior impellers.
+  - Weight: Increases by approximately 4 kg due to material density difference.
+  - Wear ring clearance: No change to specification (see IOM-AF4500-REV-D, Section 7).
+  - Cost: Unit material cost increases by approximately 9% for the impeller assembly.
+  - Warranty: No impact to standard warranty terms (POL-WARR-REV-5).
+  - Spare parts: Existing IMP-4520-CI stock may continue to be sold for units below
+    the effectivity serial number; new orders and upgrade requests use IMP-4520-DSS.
+
+RECOMMENDED ACTION FOR FIELD SERVICE
+For any AF-4520 unit in a high-chloride application showing early wear ring or
+impeller erosion during scheduled inspection, recommend the customer upgrade to
+IMP-4520-DSS at the next planned maintenance window, regardless of original
+serial number.
+
+APPROVALS
+  Engineering:        R. Okafor, Senior Engineer — Pumps, Rotterdam
+  Quality:            M. Jansen, Quality Manager, Rotterdam
+  Global Technical Services: L. Verhoeven, Director, GTS
+
+---
+SYNTHETIC DOCUMENT — created for a portfolio project simulation. Atlas Fluid
+Systems is a fictional company; this notice is illustrative only.
