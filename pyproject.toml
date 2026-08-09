@@ -20,6 +20,9 @@ dependencies = [
     "tzdata; platform_system == 'Windows'",
     # Document processing (M2)
     "pdfplumber>=0.11",
+    "langchain-text-splitters>=0.3",
+    "tokenizers>=0.20",
+    "huggingface_hub>=0.25",
 ]
 
 [project.optional-dependencies]
