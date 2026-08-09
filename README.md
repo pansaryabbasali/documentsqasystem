@@ -121,3 +121,13 @@ are reserved for a separate, harder-document project.
 
 12 documents across 5 formats (PDF, DOCX, PPTX, CSV, TXT), spanning technical,
 regulatory, procedural, HR, and business-reporting content.
+
+## 5. Vendored dependencies
+
+[`src/llm_gateway/`](src/llm_gateway/) is a vendored copy of the author's
+**llm-gateway** package: a free-tier LLM gateway with automatic provider failover
+(Groq → Gemini → OpenRouter), local quota tracking, and vision support. It is
+copied in — not referenced — so this repository clones and runs standalone at
+zero cost. All LLM calls in this project go through it; no provider SDK is used
+directly. The gateway's own test suite (80 offline tests) and development history
+live in its original repository.
