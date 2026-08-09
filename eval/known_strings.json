@@ -1,0 +1,52 @@
+[
+  {
+    "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+    "strings": [
+      "AF-4520 0.40 – 0.45 0.75",
+      "Atlas HydraSeal AH-220",
+      "Casing Bolt Torque",
+      "replace wear rings when clearance exceeds the maximum"
+    ]
+  },
+  {
+    "file": "product_manuals/AF-4500_Troubleshooting_Guide.pdf",
+    "strings": [
+      "Cavitation (insufficient NPSH available)",
+      "Replace mechanical seal per SOP-114",
+      "using Atlas HydraSeal AH-220 only",
+      "verify rotation direction matches casing arrow"
+    ]
+  },
+  {
+    "file": "safety_and_compliance/SDS_AtlasHydraSeal_AH220.pdf",
+    "strings": [
+      "Flash point (closed cup): 220°C",
+      "Product code: AH-220",
+      "Atlas HydraSeal AH-220 — Bearing Housing Lubricant"
+    ]
+  },
+  {
+    "file": "policies/Warranty_and_Service_Policy.pdf",
+    "strings": [
+      "24 months from the date of commissioning",
+      "beyond the first 12 months",
+      "extended warranty to 48 months"
+    ]
+  },
+  {
+    "file": "support/Field_Service_FAQ.pdf",
+    "strings": [
+      "0.75 mm for AF-4510/AF-4520, 0.80 mm for AF-4530",
+      "30 months from shipment",
+      "Atlas HydraSeal AH-220 only"
+    ]
+  },
+  {
+    "file": "sops/SOP-114_Mechanical_Seal_Replacement.pdf",
+    "strings": [
+      "SOP-114-REV-B",
+      "Torque wrench, 10–150 Nm range",
+      "Refill the bearing housing with Atlas HydraSeal AH-220"
+    ]
+  }
+]
