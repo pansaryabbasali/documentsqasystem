@@ -1,6 +1,6 @@
 # Extraction accuracy — M2 (known-string survival)
 
-**Result: 17/20 strings found — 85.0% (FAIL, target ≥95%)**
+**Result: 20/20 strings found — 100.0% (PASS, target ≥95%)**
 
 | Document | Known string | Found |
 |---|---|---|
@@ -8,9 +8,9 @@
 | AF-4500_Series_IOM_Manual.pdf | `Atlas HydraSeal AH-220` | ✅ |
 | AF-4500_Series_IOM_Manual.pdf | `Casing Bolt Torque` | ✅ |
 | AF-4500_Series_IOM_Manual.pdf | `replace wear rings when clearance exceeds the maximum` | ✅ |
-| AF-4500_Troubleshooting_Guide.pdf | `Cavitation (insufficient NPSH available)` | ❌ |
-| AF-4500_Troubleshooting_Guide.pdf | `Replace mechanical seal per SOP-114` | ❌ |
-| AF-4500_Troubleshooting_Guide.pdf | `using Atlas HydraSeal AH-220 only` | ❌ |
+| AF-4500_Troubleshooting_Guide.pdf | `Cavitation (insufficient NPSH available)` | ✅ |
+| AF-4500_Troubleshooting_Guide.pdf | `Replace mechanical seal per SOP-114` | ✅ |
+| AF-4500_Troubleshooting_Guide.pdf | `using Atlas HydraSeal AH-220 only` | ✅ |
 | AF-4500_Troubleshooting_Guide.pdf | `verify rotation direction matches casing arrow` | ✅ |
 | SDS_AtlasHydraSeal_AH220.pdf | `Flash point (closed cup): 220°C` | ✅ |
 | SDS_AtlasHydraSeal_AH220.pdf | `Product code: AH-220` | ✅ |
