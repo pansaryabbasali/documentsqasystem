@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "document-qa-system"
+version = "0.1.0"
+description = "Grounded document Q&A with citations over the Atlas Fluid Systems pilot corpus"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Abbas Ali Pansary" }]
+keywords = ["rag", "document-qa", "retrieval", "citations"]
+dependencies = [
+    # Runtime deps of the vendored llm_gateway package (see src/llm_gateway/)
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "typer>=0.12",
+    "rich>=13.0",
+    "tzdata; platform_system == 'Windows'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "respx>=0.21",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+llm-gateway = "llm_gateway.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/doc_qa", "src/llm_gateway"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "live: tests that hit real provider APIs (deselected by default; run with -m live)",
+]
+addopts = "-m 'not live'"
