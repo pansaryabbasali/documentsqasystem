@@ -17,6 +17,16 @@ app = typer.Typer(help="Atlas Document Q&A", no_args_is_help=True)
 console = Console()
 
 
+@app.callback()
+def main() -> None:
+    """Atlas Document Q&A.
+
+    Typer collapses a single-command app into that command, which would make
+    ``doc-qa ingest`` parse "ingest" as the dataset argument. An explicit
+    callback keeps commands as subcommands until more are added (M4: ask).
+    """
+
+
 @app.command()
 def ingest(
     dataset: Annotated[
