@@ -10,15 +10,14 @@ from doc_qa.store import VectorStore
 DATASET = Path(__file__).resolve().parent.parent / "dataset"
 
 
-def test_ingest_dataset_indexes_pdfs_and_skips_rest() -> None:
+def test_ingest_dataset_indexes_all_twelve_documents() -> None:
     store = VectorStore(collection=f"ingest_{uuid4().hex}")
     stats = ingest_directory(
         DATASET, store, FakeEmbedder(), count_tokens=lambda t: len(t.split())
     )
-    assert stats.files_indexed == 6  # the six PDFs (other formats arrive in M5)
-    assert stats.chunks_indexed == store.count() > 6
-    skipped_suffixes = {Path(name).suffix for name in stats.skipped}
-    assert skipped_suffixes == {".docx", ".pptx", ".csv", ".txt"}
+    assert stats.files_indexed == 12  # all five formats have loaders as of M5
+    assert stats.skipped == []
+    assert stats.chunks_indexed == store.count() > 12
 
 
 def test_missing_dataset_dir_fails_loudly() -> None:
@@ -42,5 +41,5 @@ def test_ingested_chunks_are_retrievable_with_provenance() -> None:
     results = store.query(embedder.embed_texts(["wear ring clearance"])[0], k=3)
     assert len(results) == 3
     for r in results:
-        assert r.chunk.source.endswith(".pdf")
-        assert r.chunk.locator.startswith("page ")
+        assert Path(r.chunk.source).suffix in {".pdf", ".docx", ".pptx", ".csv", ".txt"}
+        assert r.chunk.locator, "every chunk must be citable, whatever its format"

@@ -1,6 +1,6 @@
 """Format-dispatching loader registry.
 
-M5 adds DOCX/PPTX/CSV/TXT loaders here; the rest of the pipeline only ever
+All five corpus formats are registered; the rest of the pipeline only ever
 sees TextBlocks and never asks which format they came from.
 """
 
@@ -11,9 +11,19 @@ from pathlib import Path
 from doc_qa.errors import UnsupportedFormatError
 
 from .base import DocumentLoader, TextBlock
+from .csv import CsvLoader
+from .docx import DocxLoader
 from .pdf import PdfLoader
+from .pptx import PptxLoader
+from .txt import TxtLoader
 
-_LOADERS: tuple[DocumentLoader, ...] = (PdfLoader(),)
+_LOADERS: tuple[DocumentLoader, ...] = (
+    PdfLoader(),
+    DocxLoader(),
+    PptxLoader(),
+    CsvLoader(),
+    TxtLoader(),
+)
 
 
 def loader_for(path: Path | str) -> DocumentLoader:
@@ -26,4 +36,13 @@ def loader_for(path: Path | str) -> DocumentLoader:
     raise UnsupportedFormatError(f"No loader for '{suffix or path}' (supported: {supported})")
 
 
-__all__ = ["DocumentLoader", "PdfLoader", "TextBlock", "loader_for"]
+__all__ = [
+    "CsvLoader",
+    "DocumentLoader",
+    "DocxLoader",
+    "PdfLoader",
+    "PptxLoader",
+    "TextBlock",
+    "TxtLoader",
+    "loader_for",
+]
