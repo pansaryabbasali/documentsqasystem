@@ -31,6 +31,20 @@ def test_ingest_dataset_indexes_pdfs_and_skips_rest() -> None:
     assert skipped_suffixes == {".docx", ".pptx", ".csv", ".txt"}
 
 
+def test_missing_dataset_dir_fails_loudly() -> None:
+    import pytest
+
+    from doc_qa.errors import DocQAError
+
+    with pytest.raises(DocQAError, match="not found"):
+        ingest_directory(
+            Path("no/such/dir"),
+            VectorStore(collection=f"ingest_{uuid4().hex}"),
+            FakeEmbedder(),
+            count_tokens=lambda t: len(t.split()),
+        )
+
+
 def test_ingested_chunks_are_retrievable_with_provenance() -> None:
     store = VectorStore(collection=f"ingest_{uuid4().hex}")
     embedder = FakeEmbedder()

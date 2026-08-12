@@ -12,7 +12,7 @@ from pathlib import Path
 
 from .chunking import Chunk, chunk_blocks
 from .embeddings import Embedder
-from .errors import UnsupportedFormatError
+from .errors import DocQAError, UnsupportedFormatError
 from .loaders import loader_for
 from .store import VectorStore
 
@@ -32,6 +32,11 @@ def ingest_directory(
     count_tokens: Callable[[str], int],
 ) -> IngestStats:
     """Index every supported file under ``dataset_dir`` (recursive, deterministic order)."""
+    dataset_dir = Path(dataset_dir)
+    if not dataset_dir.is_dir():
+        # rglob on a missing dir yields nothing — that would report "0 files
+        # indexed" as success. A wrong path must fail loudly, not quietly.
+        raise DocQAError(f"dataset directory not found: {dataset_dir.resolve()}")
     stats = IngestStats()
     for path in sorted(p for p in Path(dataset_dir).rglob("*") if p.is_file()):
         try:
