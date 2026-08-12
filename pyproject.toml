@@ -37,6 +37,7 @@ dev = [
 
 [project.scripts]
 llm-gateway = "llm_gateway.cli:app"
+doc-qa = "doc_qa.cli:app"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/doc_qa", "src/llm_gateway"]
