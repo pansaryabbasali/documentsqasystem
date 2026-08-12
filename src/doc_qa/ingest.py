@@ -24,6 +24,25 @@ class IngestStats:
     skipped: list[str] = field(default_factory=list)  # files with no loader yet
 
 
+def ingest_file(
+    path: Path,
+    store: VectorStore,
+    embedder: Embedder,
+    *,
+    count_tokens: Callable[[str], int],
+) -> int:
+    """Index one file; returns the number of chunks stored.
+
+    Raises UnsupportedFormatError when no loader handles the format —
+    single-file ingestion (e.g. an upload) must fail loudly, unlike a
+    directory sweep where skipping is the right policy.
+    """
+    chunks: list[Chunk] = chunk_blocks(loader_for(path).load(path), count_tokens=count_tokens)
+    if chunks:
+        store.add(chunks, embedder.embed_texts([c.text for c in chunks]))
+    return len(chunks)
+
+
 def ingest_directory(
     dataset_dir: Path,
     store: VectorStore,
@@ -38,16 +57,13 @@ def ingest_directory(
         # indexed" as success. A wrong path must fail loudly, not quietly.
         raise DocQAError(f"dataset directory not found: {dataset_dir.resolve()}")
     stats = IngestStats()
-    for path in sorted(p for p in Path(dataset_dir).rglob("*") if p.is_file()):
+    for path in sorted(p for p in dataset_dir.rglob("*") if p.is_file()):
         try:
-            loader = loader_for(path)
+            indexed = ingest_file(path, store, embedder, count_tokens=count_tokens)
         except UnsupportedFormatError:
             stats.skipped.append(path.name)
             continue
-        chunks: list[Chunk] = chunk_blocks(loader.load(path), count_tokens=count_tokens)
-        if not chunks:
-            continue
-        store.add(chunks, embedder.embed_texts([c.text for c in chunks]))
-        stats.files_indexed += 1
-        stats.chunks_indexed += len(chunks)
+        if indexed:
+            stats.files_indexed += 1
+            stats.chunks_indexed += indexed
     return stats
