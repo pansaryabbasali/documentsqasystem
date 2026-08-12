@@ -15,9 +15,10 @@ build/
 .ruff_cache/
 .mypy_cache/
 
-# Local data stores (vector DB, downloaded models)
+# Local data stores (vector DB, downloaded models) and eval caches
 .chroma/
 .models/
+eval/.rag_cache.json
 
 # OS noise
 .DS_Store

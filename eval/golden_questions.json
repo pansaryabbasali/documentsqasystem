@@ -3,38 +3,78 @@
     "id": "wear-ring-af4520",
     "persona": "Field Service Engineer",
     "question": "What is the impeller wear ring clearance for the AF-4520?",
-    "sources": [{"file": "product_manuals/AF-4500_Series_IOM_Manual.pdf", "pages": ["page 3"]}],
-    "answer_snippet": "0.40 – 0.45"
+    "sources": [
+      {
+        "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+        "pages": [
+          "page 3"
+        ]
+      }
+    ],
+    "answer_snippet": "0.40"
   },
   {
     "id": "lubricant-flash-point",
     "persona": "Technical Support Agent",
     "question": "What lubricant does the AF-4500 series bearing housing use, and what is its flash point?",
     "sources": [
-      {"file": "safety_and_compliance/SDS_AtlasHydraSeal_AH220.pdf", "pages": ["page 1", "page 2"]},
-      {"file": "product_manuals/AF-4500_Series_IOM_Manual.pdf", "pages": ["page 2", "page 3"]}
+      {
+        "file": "safety_and_compliance/SDS_AtlasHydraSeal_AH220.pdf",
+        "pages": [
+          "page 1",
+          "page 2"
+        ]
+      },
+      {
+        "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+        "pages": [
+          "page 2",
+          "page 3"
+        ]
+      }
     ],
-    "answer_snippet": "220°C"
+    "answer_snippet": "220"
   },
   {
     "id": "warranty-14-months",
     "persona": "Technical Support Agent",
     "question": "A customer's pump failed after 14 months. What is covered under the standard warranty?",
-    "sources": [{"file": "policies/Warranty_and_Service_Policy.pdf", "pages": ["page 1"]}],
-    "answer_snippet": "24 months from the date of commissioning"
+    "sources": [
+      {
+        "file": "policies/Warranty_and_Service_Policy.pdf",
+        "pages": [
+          "page 1"
+        ]
+      }
+    ],
+    "answer_snippet": "24 months"
   },
   {
     "id": "pump-screaming",
     "persona": "Technical Support Agent",
     "question": "A customer says their pump is making a screaming noise. What should I check?",
-    "sources": [{"file": "product_manuals/AF-4500_Troubleshooting_Guide.pdf", "pages": ["page 1"]}],
-    "answer_snippet": "Cavitation (insufficient NPSH available)"
+    "sources": [
+      {
+        "file": "product_manuals/AF-4500_Troubleshooting_Guide.pdf",
+        "pages": [
+          "page 1"
+        ]
+      }
+    ],
+    "answer_snippet": "cavitation"
   },
   {
     "id": "casing-bolt-torque",
     "persona": "Field Service Engineer",
     "question": "What torque should I use for the casing bolts on the AF-4520?",
-    "sources": [{"file": "product_manuals/AF-4500_Series_IOM_Manual.pdf", "pages": ["page 3"]}],
+    "sources": [
+      {
+        "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+        "pages": [
+          "page 3"
+        ]
+      }
+    ],
     "answer_snippet": "95"
   },
   {
@@ -42,8 +82,18 @@
     "persona": "Field Service Engineer",
     "question": "What is the maximum allowed wear ring clearance before replacement on the AF-4530?",
     "sources": [
-      {"file": "support/Field_Service_FAQ.pdf", "pages": ["page 1"]},
-      {"file": "product_manuals/AF-4500_Series_IOM_Manual.pdf", "pages": ["page 3"]}
+      {
+        "file": "support/Field_Service_FAQ.pdf",
+        "pages": [
+          "page 1"
+        ]
+      },
+      {
+        "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+        "pages": [
+          "page 3"
+        ]
+      }
     ],
     "answer_snippet": "0.80"
   },
@@ -52,79 +102,151 @@
     "persona": "Field Service Engineer",
     "question": "How often should the mechanical seal on an AF-4500 pump be serviced?",
     "sources": [
-      {"file": "support/Field_Service_FAQ.pdf", "pages": ["page 1"]},
-      {"file": "product_manuals/AF-4500_Series_IOM_Manual.pdf", "pages": ["page 2"]}
+      {
+        "file": "support/Field_Service_FAQ.pdf",
+        "pages": [
+          "page 1"
+        ]
+      },
+      {
+        "file": "product_manuals/AF-4500_Series_IOM_Manual.pdf",
+        "pages": [
+          "page 2"
+        ]
+      }
     ],
-    "answer_snippet": "Annually"
+    "answer_snippet": "annual"
   },
   {
     "id": "seal-replacement-tools",
     "persona": "Field Service Engineer",
     "question": "What tools and materials do I need for a mechanical seal replacement per SOP-114?",
-    "sources": [{"file": "sops/SOP-114_Mechanical_Seal_Replacement.pdf", "pages": ["page 1"]}],
+    "sources": [
+      {
+        "file": "sops/SOP-114_Mechanical_Seal_Replacement.pdf",
+        "pages": [
+          "page 1"
+        ]
+      }
+    ],
     "answer_snippet": "Torque wrench"
   },
   {
     "id": "seal-safety-lockout",
     "persona": "Field Service Engineer",
     "question": "What safety precautions are required before starting a mechanical seal replacement?",
-    "sources": [{"file": "sops/SOP-114_Mechanical_Seal_Replacement.pdf", "pages": ["page 1", "page 2"]}],
+    "sources": [
+      {
+        "file": "sops/SOP-114_Mechanical_Seal_Replacement.pdf",
+        "pages": [
+          "page 1",
+          "page 2"
+        ]
+      }
+    ],
     "answer_snippet": "lockout"
   },
   {
     "id": "ah220-handling",
     "persona": "Field Service Engineer",
     "question": "What protective equipment should I wear when handling AH-220 lubricant?",
-    "sources": [{"file": "safety_and_compliance/SDS_AtlasHydraSeal_AH220.pdf", "pages": ["page 1", "page 2"]}],
+    "sources": [
+      {
+        "file": "safety_and_compliance/SDS_AtlasHydraSeal_AH220.pdf",
+        "pages": [
+          "page 1",
+          "page 2"
+        ]
+      }
+    ],
     "answer_snippet": "gloves"
   },
   {
     "id": "pump-loses-prime",
     "persona": "Technical Support Agent",
     "question": "The pump loses prime shortly after startup. What are the likely causes?",
-    "sources": [{"file": "product_manuals/AF-4500_Troubleshooting_Guide.pdf", "pages": ["page 1"]}],
+    "sources": [
+      {
+        "file": "product_manuals/AF-4500_Troubleshooting_Guide.pdf",
+        "pages": [
+          "page 1"
+        ]
+      }
+    ],
     "answer_snippet": "suction"
   },
   {
     "id": "platinum-tier",
     "persona": "Regional Manager",
     "question": "What is included in the Platinum service tier?",
-    "sources": [{"file": "policies/Warranty_and_Service_Policy.pdf", "pages": ["page 1"]}],
+    "sources": [
+      {
+        "file": "policies/Warranty_and_Service_Policy.pdf",
+        "pages": [
+          "page 1"
+        ]
+      }
+    ],
     "answer_snippet": "48 months"
   },
   {
     "id": "pto-carryover",
     "persona": "New GTS Employee",
     "question": "How many PTO carry-over days am I allowed at Atlas?",
-    "sources": [{"file": "policies/HR_Leave_and_Time_Off_Policy.docx", "pages": []}],
+    "sources": [
+      {
+        "file": "policies/HR_Leave_and_Time_Off_Policy.docx",
+        "pages": []
+      }
+    ],
     "answer_snippet": ""
   },
   {
     "id": "emea-backlog",
     "persona": "Regional Manager",
     "question": "What was EMEA's order backlog in Q2 2026?",
-    "sources": [{"file": "reports_and_presentations/Q2_2026_Business_Review.pptx", "pages": []}],
+    "sources": [
+      {
+        "file": "reports_and_presentations/Q2_2026_Business_Review.pptx",
+        "pages": []
+      }
+    ],
     "answer_snippet": ""
   },
   {
     "id": "af4530-max-flow",
     "persona": "Technical Support Agent",
     "question": "What is the maximum flow rate of the AF-4530?",
-    "sources": [{"file": "specifications/AF-4500_Series_Spec_Sheet.csv", "pages": []}],
+    "sources": [
+      {
+        "file": "specifications/AF-4500_Series_Spec_Sheet.csv",
+        "pages": []
+      }
+    ],
     "answer_snippet": "850"
   },
   {
     "id": "impeller-material-serial",
     "persona": "Field Service Engineer",
     "question": "Which AF-4520 serial numbers ship with the duplex stainless steel impeller?",
-    "sources": [{"file": "engineering/ECN-2031_Impeller_Material_Change.txt", "pages": []}],
+    "sources": [
+      {
+        "file": "engineering/ECN-2031_Impeller_Material_Change.txt",
+        "pages": []
+      }
+    ],
     "answer_snippet": "AF4520-2026-0500"
   },
   {
     "id": "expense-approval",
     "persona": "New GTS Employee",
     "question": "What expenses require prior approval before I incur them?",
-    "sources": [{"file": "policies/Expense_Reimbursement_Policy.docx", "pages": []}],
+    "sources": [
+      {
+        "file": "policies/Expense_Reimbursement_Policy.docx",
+        "pages": []
+      }
+    ],
     "answer_snippet": ""
   }
 ]
