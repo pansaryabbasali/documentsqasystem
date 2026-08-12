@@ -20,6 +20,7 @@ Run:  python eval/rag_eval.py    (writes eval/rag_eval_M4.md; exit 1 if below)
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from uuid import uuid4
@@ -35,7 +36,7 @@ from doc_qa.store import VectorStore
 from doc_qa.tokenization import get_token_counter
 
 ROOT = Path(__file__).resolve().parent.parent
-REPORT = ROOT / "eval" / "rag_eval_M4.md"
+REPORT = ROOT / "eval" / "rag_eval.md"
 CACHE_PATH = ROOT / "eval" / ".rag_cache.json"
 TARGET_PERCENT = 80.0
 
@@ -72,8 +73,12 @@ def main() -> int:
         cite_ok = answer.grounded and any(
             acceptable(q, c.source, c.locator, pages_matter=True) for c in answer.citations
         )
-        snip_ok = bool(q["answer_snippet"]) and normalize(q["answer_snippet"]) in normalize(
-            answer.text
+        # digit-boundary match: "5" must not ride inside "25"/"150", but "312"
+        # still matches "312M" and "annual" still matches "annually" (full
+        # word-boundary \b proved too strict — it failed both of those).
+        snippet = normalize(q["answer_snippet"])
+        snip_ok = bool(snippet) and bool(
+            re.search(rf"(?<!\d){re.escape(snippet)}(?!\d)", normalize(answer.text))
         )
         ok = answer.grounded and cite_ok and snip_ok
         correct += ok
@@ -90,7 +95,7 @@ def main() -> int:
     verdict = "PASS" if rate >= TARGET_PERCENT else "FAIL"
     check = lambda b: "✅" if b else "❌"  # noqa: E731
     lines = [
-        "# RAG evaluation — M4 (end-to-end, live gateway, cached)",
+        "# RAG evaluation (end-to-end, live gateway, cached)",
         "",
         f"**Result: {correct}/{len(rows)} correct — {rate:.1f}% ({verdict}, "
         f"target ≥{TARGET_PERCENT:.0f}%)** · Refusal probes: {refused}/{len(refusals)} refused"

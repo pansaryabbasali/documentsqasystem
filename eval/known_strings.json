@@ -48,5 +48,48 @@
       "Torque wrench, 10–150 Nm range",
       "Refill the bearing housing with Atlas HydraSeal AH-220"
     ]
+  },
+  {
+    "file": "policies/HR_Leave_and_Time_Off_Policy.docx",
+    "strings": [
+      "maximum of 5 unused annual leave days",
+      "must be used by March 31",
+      "Netherlands (Rotterdam) | 25 | Statutory minimum plus 5 company days"
+    ]
+  },
+  {
+    "file": "policies/Expense_Reimbursement_Policy.docx",
+    "strings": [
+      "Claims exceeding €1,000 require additional approval",
+      "within 30 days of being incurred"
+    ]
+  },
+  {
+    "file": "reports_and_presentations/Q2_2026_Business_Review.pptx",
+    "strings": [
+      "Order backlog across all product lines stands at €312M",
+      "EMEA | 48.6 | 52.1 | +7.2%"
+    ]
+  },
+  {
+    "file": "reports_and_presentations/FSE_Onboarding_Overview.pptx",
+    "strings": [
+      "lockout-tagout (LOTO) certification",
+      "~220 engineers who install, commission, and repair"
+    ]
+  },
+  {
+    "file": "specifications/AF-4500_Series_Spec_Sheet.csv",
+    "strings": [
+      "Model: AF-4530; Max_Flow_m3h: 850",
+      "Wear_Ring_Clearance_New_mm: 0.40-0.45"
+    ]
+  },
+  {
+    "file": "engineering/ECN-2031_Impeller_Material_Change.txt",
+    "strings": [
+      "AF4520-2026-0500",
+      "ASTM A890 Grade 4A"
+    ]
   }
 ]

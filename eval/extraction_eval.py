@@ -22,7 +22,7 @@ from doc_qa.loaders import loader_for
 
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "eval" / "known_strings.json"
-REPORT = ROOT / "eval" / "extraction_accuracy_M2.md"
+REPORT = ROOT / "eval" / "extraction_accuracy.md"
 TARGET_PERCENT = 95.0
 
 
@@ -46,7 +46,7 @@ def main() -> int:
     rate = 100 * hits / len(rows)
     verdict = "PASS" if rate >= TARGET_PERCENT else "FAIL"
     lines = [
-        "# Extraction accuracy — M2 (known-string survival)",
+        "# Extraction accuracy (known-string survival, all formats)",
         "",
         f"**Result: {hits}/{len(rows)} strings found — {rate:.1f}% "
         f"({verdict}, target ≥{TARGET_PERCENT:.0f}%)**",

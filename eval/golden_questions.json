@@ -196,22 +196,27 @@
     "sources": [
       {
         "file": "policies/HR_Leave_and_Time_Off_Policy.docx",
-        "pages": []
+        "pages": [
+          "section \"Carry-Over Policy\""
+        ]
       }
     ],
-    "answer_snippet": ""
+    "answer_snippet": "5"
   },
   {
-    "id": "emea-backlog",
+    "id": "total-backlog",
     "persona": "Regional Manager",
-    "question": "What was EMEA's order backlog in Q2 2026?",
+    "question": "What was Atlas's total order backlog in Q2 2026?",
     "sources": [
       {
         "file": "reports_and_presentations/Q2_2026_Business_Review.pptx",
-        "pages": []
+        "pages": [
+          "slide 3",
+          "slide 5"
+        ]
       }
     ],
-    "answer_snippet": ""
+    "answer_snippet": "312"
   },
   {
     "id": "af4530-max-flow",
@@ -220,7 +225,9 @@
     "sources": [
       {
         "file": "specifications/AF-4500_Series_Spec_Sheet.csv",
-        "pages": []
+        "pages": [
+          "row 3"
+        ]
       }
     ],
     "answer_snippet": "850"
@@ -232,7 +239,9 @@
     "sources": [
       {
         "file": "engineering/ECN-2031_Impeller_Material_Change.txt",
-        "pages": []
+        "pages": [
+          "full document"
+        ]
       }
     ],
     "answer_snippet": "AF4520-2026-0500"
@@ -240,13 +249,29 @@
   {
     "id": "expense-approval",
     "persona": "New GTS Employee",
-    "question": "What expenses require prior approval before I incur them?",
+    "question": "Which expense claims need approval beyond my direct manager?",
     "sources": [
       {
         "file": "policies/Expense_Reimbursement_Policy.docx",
-        "pages": []
+        "pages": [
+          "section \"Approval Workflow\""
+        ]
       }
     ],
-    "answer_snippet": ""
+    "answer_snippet": "1,000"
+  },
+  {
+    "id": "emea-revenue",
+    "persona": "Regional Manager",
+    "question": "What was EMEA's revenue in Q2 2026?",
+    "sources": [
+      {
+        "file": "reports_and_presentations/Q2_2026_Business_Review.pptx",
+        "pages": [
+          "slide 4"
+        ]
+      }
+    ],
+    "answer_snippet": "52.1"
   }
 ]

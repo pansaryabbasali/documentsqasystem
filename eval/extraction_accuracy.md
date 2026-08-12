@@ -1,6 +1,6 @@
-# Extraction accuracy — M2 (known-string survival)
+# Extraction accuracy (known-string survival, all formats)
 
-**Result: 20/20 strings found — 100.0% (PASS, target ≥95%)**
+**Result: 33/33 strings found — 100.0% (PASS, target ≥95%)**
 
 | Document | Known string | Found |
 |---|---|---|
@@ -24,3 +24,16 @@
 | SOP-114_Mechanical_Seal_Replacement.pdf | `SOP-114-REV-B` | ✅ |
 | SOP-114_Mechanical_Seal_Replacement.pdf | `Torque wrench, 10–150 Nm range` | ✅ |
 | SOP-114_Mechanical_Seal_Replacement.pdf | `Refill the bearing housing with Atlas HydraSeal AH-220` | ✅ |
+| HR_Leave_and_Time_Off_Policy.docx | `maximum of 5 unused annual leave days` | ✅ |
+| HR_Leave_and_Time_Off_Policy.docx | `must be used by March 31` | ✅ |
+| HR_Leave_and_Time_Off_Policy.docx | `Netherlands (Rotterdam) | 25 | Statutory minimum plus 5 company days` | ✅ |
+| Expense_Reimbursement_Policy.docx | `Claims exceeding €1,000 require additional approval` | ✅ |
+| Expense_Reimbursement_Policy.docx | `within 30 days of being incurred` | ✅ |
+| Q2_2026_Business_Review.pptx | `Order backlog across all product lines stands at €312M` | ✅ |
+| Q2_2026_Business_Review.pptx | `EMEA | 48.6 | 52.1 | +7.2%` | ✅ |
+| FSE_Onboarding_Overview.pptx | `lockout-tagout (LOTO) certification` | ✅ |
+| FSE_Onboarding_Overview.pptx | `~220 engineers who install, commission, and repair` | ✅ |
+| AF-4500_Series_Spec_Sheet.csv | `Model: AF-4530; Max_Flow_m3h: 850` | ✅ |
+| AF-4500_Series_Spec_Sheet.csv | `Wear_Ring_Clearance_New_mm: 0.40-0.45` | ✅ |
+| ECN-2031_Impeller_Material_Change.txt | `AF4520-2026-0500` | ✅ |
+| ECN-2031_Impeller_Material_Change.txt | `ASTM A890 Grade 4A` | ✅ |

@@ -1,6 +1,6 @@
-# RAG evaluation — M4 (end-to-end, live gateway, cached)
+# RAG evaluation (end-to-end, live gateway, cached)
 
-**Result: 10/12 correct — 83.3% (PASS, target ≥80%)** · Refusal probes: 3/3 refused · Zero-uncited-answers invariant: held
+**Result: 16/18 correct — 88.9% (PASS, target ≥80%)** · Refusal probes: 3/3 refused · Zero-uncited-answers invariant: held
 
 Embedding: BAAI/bge-small-en-v1.5, k=5. Correct = grounded ∧ citation-in-acceptable-set ∧ snippet-in-answer.
 
@@ -18,6 +18,12 @@ Embedding: BAAI/bge-small-en-v1.5, k=5. Correct = grounded ∧ citation-in-accep
 | ah220-handling | ✅ | ✅ | ✅ | ✅ | gemini-flash-lite |
 | pump-loses-prime | ✅ | ✅ | ✅ | ✅ | gemini-flash-lite |
 | platinum-tier | ✅ | ✅ | ✅ | ✅ | gemini-flash-lite |
+| pto-carryover | ✅ | ✅ | ✅ | ✅ | groq |
+| total-backlog | ✅ | ✅ | ✅ | ✅ | groq |
+| af4530-max-flow | ✅ | ✅ | ✅ | ✅ | groq |
+| impeller-material-serial | ✅ | ✅ | ✅ | ✅ | groq |
+| expense-approval | ✅ | ✅ | ✅ | ✅ | groq |
+| emea-revenue | ✅ | ✅ | ✅ | ✅ | groq |
 
 ## Refusal probes (must refuse)
 
