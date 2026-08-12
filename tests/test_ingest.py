@@ -3,21 +3,11 @@
 from pathlib import Path
 from uuid import uuid4
 
-from doc_qa.embeddings import Embedder
+from conftest import FakeEmbedder
 from doc_qa.ingest import ingest_directory
 from doc_qa.store import VectorStore
 
 DATASET = Path(__file__).resolve().parent.parent / "dataset"
-
-
-class FakeEmbedder(Embedder):
-    """Deterministic 8-dim vectors from text content; no model, no network."""
-
-    def __init__(self) -> None:
-        super().__init__(model_name="fake")
-
-    def embed_texts(self, texts: list[str]) -> list[list[float]]:
-        return [[float((hash(t) >> shift) % 97) / 97 for shift in range(8)] for t in texts]
 
 
 def test_ingest_dataset_indexes_pdfs_and_skips_rest() -> None:
