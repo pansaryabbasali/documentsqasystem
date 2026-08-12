@@ -24,6 +24,11 @@ def get_token_counter(model_name: str = DEFAULT_TOKENIZER_MODEL) -> Callable[[st
     from tokenizers import Tokenizer
 
     tokenizer = Tokenizer.from_file(hf_hub_download(model_name, "tokenizer.json"))
+    # Shipped tokenizer.json may carry the model's padding/truncation config
+    # (MiniLM's pads everything to 128 — every count came back 128 and the
+    # splitter shredded pages into fragments). Counting must see raw lengths.
+    tokenizer.no_padding()
+    tokenizer.no_truncation()
 
     def count(text: str) -> int:
         return len(tokenizer.encode(text, add_special_tokens=False).ids)

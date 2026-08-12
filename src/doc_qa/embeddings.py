@@ -1,8 +1,8 @@
 """Local embedding models via sentence-transformers. No API calls, no cost.
 
-The default model is a placeholder until the M3 bake-off
-(eval/embedding_bakeoff.py) picks the winner on measured retrieval quality;
-the constant below is updated by that decision and the report records why.
+The default model was chosen by the M3 bake-off (eval/embedding_bakeoff.md):
+bge-small-en-v1.5 beat all-MiniLM-L6-v2 on doc-hit@1 (83% vs 42%), doc-hit@3
+(100% vs 92%) and page-hit@3 (92% vs 83%) at equal speed on this corpus.
 
 Some models are trained with an instruction prefix on *queries* (not on the
 indexed passages) — bge's retrieval quality drops measurably without it. The
@@ -11,7 +11,7 @@ prefix lives in a per-model table here so callers never need to know.
 
 from __future__ import annotations
 
-DEFAULT_EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+DEFAULT_EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 
 _QUERY_PREFIXES = {
     "BAAI/bge-small-en-v1.5": "Represent this sentence for searching relevant passages: ",

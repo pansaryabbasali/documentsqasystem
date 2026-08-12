@@ -16,6 +16,17 @@ def test_construction_is_lazy_no_model_load() -> None:
 
 
 @pytest.mark.models
+def test_token_counter_sees_raw_lengths_not_padded() -> None:
+    """Regression: MiniLM's tokenizer.json pads to 128 — every count was 128."""
+    from doc_qa.tokenization import get_token_counter
+
+    for model in ("sentence-transformers/all-MiniLM-L6-v2", "BAAI/bge-small-en-v1.5"):
+        count = get_token_counter(model)
+        assert count("") == 0, f"{model}: empty text must count 0"
+        assert count("pump") < count("pump impeller wear ring clearance"), model
+
+
+@pytest.mark.models
 def test_embeddings_are_normalized_and_semantically_ordered() -> None:
     embedder = Embedder()  # default model
     vectors = embedder.embed_texts(
