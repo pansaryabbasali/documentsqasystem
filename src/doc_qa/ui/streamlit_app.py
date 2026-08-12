@@ -30,26 +30,54 @@ SAMPLE_QUESTIONS = [
 
 st.set_page_config(page_title="Atlas GTS Knowledge Portal", page_icon="🔧", layout="wide")
 
+LOGO_SVG = """<svg width="46" height="46" viewBox="0 0 44 44" role="img" aria-label="Atlas logo">
+  <rect width="44" height="44" rx="10" fill="#0f3557"/>
+  <path d="M22 7 C22 7 12 19.5 12 26.5 a10 10 0 0 0 20 0 C32 19.5 22 7 22 7 Z" fill="#a7c9e8"/>
+  <circle cx="22" cy="26.5" r="4.5" fill="#fbfcfe"/>
+</svg>"""
+
 st.markdown(
-    """
+    f"""
     <style>
-      .block-container { padding-top: 1.5rem; max-width: 1200px; }
-      #MainMenu, footer { visibility: hidden; }
-      .atlas-header { border-bottom: 3px solid #0f3557; padding-bottom: 0.6rem; }
-      .atlas-header h1 { color: #0f3557; font-size: 1.6rem; margin: 0; }
-      .atlas-header p { color: #5a6a7a; margin: 0.2rem 0 0 0; font-size: 0.95rem; }
-      .source-card { border: 1px solid #d5dde5; border-left: 4px solid #0f3557;
-                     border-radius: 4px; padding: 0.45rem 0.7rem; margin: 0.25rem 0;
-                     font-size: 0.85rem; background: #f7f9fb; }
-      .source-card a { color: #0f3557; font-weight: 600; text-decoration: none; }
-      .provider-note { color: #8a97a5; font-size: 0.75rem; }
+      .block-container {{ padding-top: 3rem; max-width: 1200px; }}
+      #MainMenu, footer {{ visibility: hidden; }}
+      .atlas-header {{ display: flex; align-items: center; gap: 0.9rem;
+                       border-bottom: 3px solid #0f3557; padding-bottom: 0.8rem; }}
+      .atlas-header h1 {{ color: #0f3557; font-size: 1.55rem; margin: 0; line-height: 1.2; }}
+      .atlas-header p {{ color: #5a6a7a; margin: 0.15rem 0 0 0; font-size: 0.92rem; }}
+      .stat-band {{ display: flex; gap: 0.7rem; margin: 0.9rem 0 0.3rem 0; flex-wrap: wrap; }}
+      .stat {{ border-radius: 10px; padding: 0.55rem 0.95rem; font-size: 0.8rem;
+               color: #1f2d3a; }}
+      .stat b {{ display: block; font-size: 1.05rem; color: #0f3557; }}
+      .stat.blue {{ background: #e8f1fb; }} .stat.mint {{ background: #e6f5ee; }}
+      .stat.sand {{ background: #fdf3e3; }} .stat.lilac {{ background: #f0ecfa; }}
+      .source-card {{ border: 1px solid #c9d8e6; border-left: 4px solid #0f3557;
+                      border-radius: 6px; padding: 0.45rem 0.7rem; margin: 0.25rem 0;
+                      font-size: 0.85rem; background: #f2f7fc; color: #1f2d3a; }}
+      .source-card a {{ color: #0f3557; font-weight: 600; text-decoration: none; }}
+      .provider-note {{ color: #8a97a5; font-size: 0.75rem; }}
     </style>
     <div class="atlas-header">
-      <h1>Atlas Fluid Systems — Global Technical Services</h1>
-      <p>Engineering knowledge portal · pumps, valves &amp; compressor packages since 1978</p>
+      {LOGO_SVG}
+      <div>
+        <h1>Atlas Fluid Systems — Global Technical Services</h1>
+        <p>Engineering knowledge portal · pumps, valves &amp; compressor packages since 1978</p>
+      </div>
+    </div>
+    <div class="stat-band">
+      <div class="stat blue"><b>Rotterdam, NL</b>headquarters · est. 1978</div>
+      <div class="stat mint"><b>~3,200</b>employees worldwide</div>
+      <div class="stat sand"><b>€480M</b>annual revenue</div>
+      <div class="stat lilac"><b>220 engineers</b>global field service</div>
     </div>
     """,
     unsafe_allow_html=True,
+)
+st.caption(
+    "Atlas designs and manufactures centrifugal & positive-displacement pumps, control "
+    "valves and compressor packages for refineries, water utilities, chemical processors "
+    "and power operators — with manufacturing in Rotterdam, Gdańsk and Pune, and service "
+    "hubs in Rotterdam, Houston and Singapore."
 )
 
 main_col, chat_col = st.columns([3, 2], gap="large")

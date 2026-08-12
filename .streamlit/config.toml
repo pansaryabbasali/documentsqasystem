@@ -1,0 +1,14 @@
+# Portal theme: forced light with pastel hues (owner requirement — the UI
+# must not follow the viewer's OS dark mode; the design assumes light).
+[theme]
+base = "light"
+primaryColor = "#0f3557"
+backgroundColor = "#fbfcfe"
+secondaryBackgroundColor = "#eef3f8"
+textColor = "#1f2d3a"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
