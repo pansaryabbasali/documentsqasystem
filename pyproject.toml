@@ -23,6 +23,9 @@ dependencies = [
     "langchain-text-splitters>=0.3",
     "tokenizers>=0.20",
     "huggingface_hub>=0.25",
+    # Vector pipeline (M3): local embeddings + local vector store
+    "sentence-transformers>=3.0",
+    "chromadb>=0.6",
 ]
 
 [project.optional-dependencies]
@@ -50,5 +53,6 @@ select = ["E", "F", "W", "I", "UP", "B", "SIM"]
 testpaths = ["tests"]
 markers = [
     "live: tests that hit real provider APIs (deselected by default; run with -m live)",
+    "models: tests that download local embedding models (deselected by default; run with -m models)",
 ]
-addopts = "-m 'not live'"
+addopts = "-m 'not live and not models'"
